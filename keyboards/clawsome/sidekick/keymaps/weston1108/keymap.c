@@ -226,9 +226,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    /*
     * ------------------------------------
-    * |___ |____|____|____|____|____|____|
+    * |____|____|____|____|____|____|____|
     * ------------------------------------
-    * |___ |___ |____| 7  | 8  | 9  | Tab|
+    * |____|____|____| 7  | 8  | 9  | Tab|
     * ------------------------------|    |
     * |    |    |    | 4  | 5  | 6  |    |
     * ------------------------------------
@@ -239,18 +239,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     */
     [0] = LAYOUT(
         PRNT_01,  PRNT_03, PRNT_04, KC_NLCK, KC_PSLS, KC_BSPC, MO(1),
-        PRNT_02,  KC_END,  KC_PGDN, CMD_07,  CMD_08,  CMD_09,   KC_TAB,
-                                   CMD_04,  CMD_05,  CMD_06,
-                 KC_UP,            CMD_01,  CMD_02,  CMD_03,   KC_PENT,
-        KC_LEFT, KC_DOWN, KC_RGHT, KC_0,            NET_01
+        PRNT_02,  KC_END,  KC_PGDN, CMD_07,  CMD_08,  CMD_09,  KC_TAB,
+                                    CMD_04,  CMD_05,  CMD_06,
+                 KC_UP,             CMD_01,  CMD_02,  CMD_03,  KC_PENT,
+        KC_LEFT, KC_DOWN, KC_RGHT,  KC_0,             NET_01
     ),
 
     [1] = LAYOUT(
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, PASS_01, KC_TRNS,
-        KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,
-                                   KC_TRNS,  KC_TRNS,  KC_TRNS,
-                 KC_TRNS,            CMD_11,  CMD_12,  CMD_13,   KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, CMD_10,            NET_02
+        _______,  _______, _______,  _______, _______, PASS_01, _______,
+        _______,  _______, _______,  _______, _______, _______, _______,
+                                     _______, _______, _______,
+                  _______,           CMD_11,  CMD_12,  CMD_13,  _______,
+        _______,  _______,  _______, CMD_10,           NET_02
     ),
 };
 
