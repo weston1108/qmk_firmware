@@ -199,7 +199,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 	case PASS_01:
 		if (record->event.pressed) {
-			SEND_STRING(" ");
+			SEND_STRING("Ch");
 		}
 		else {
 
@@ -208,7 +208,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 	case PASS_02:
 		if (record->event.pressed) {
-			SEND_STRING(" ");
+			SEND_STRING("wpcb");
 		}
 		else {
 
@@ -217,7 +217,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 	case PASS_03:
 		if (record->event.pressed) {
-			SEND_STRING(" ");
+			SEND_STRING("~");
 		}
 		else {
 
