@@ -29,9 +29,13 @@ enum custom_keycodes {
 	CMD_11,
 	CMD_12,
 	CMD_13,
+	CD_F,
+	CD_IMG,
     NET_01,
     NET_02,
     PASS_01,
+	PASS_02,
+	PASS_03,
     PRNT_01,
     PRNT_02,
     PRNT_03,
@@ -157,6 +161,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		}
 		break;
 
+	case CD_F:
+		if (record->event.pressed) {
+			SEND_STRING("f:");
+		}
+		else {
+
+		}
+		break;
+
+	case CD_IMG:
+		if (record->event.pressed) {
+			SEND_STRING("cd Images/Manual");
+		}
+		else {
+
+		}
+		break;
+
 	case NET_01:
 		if (record->event.pressed) {
 			SEND_STRING("Net use F: \\\\wpcwds-ba.wpcarey.ad.asu.edu\\DATA /user:asurite\\wpreecs");
@@ -177,7 +199,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 	case PASS_01:
 		if (record->event.pressed) {
-			SEND_STRING("NoPassForYou");
+			SEND_STRING(" ");
+		}
+		else {
+
+		}
+		break;
+
+	case PASS_02:
+		if (record->event.pressed) {
+			SEND_STRING(" ");
+		}
+		else {
+
+		}
+		break;
+
+	case PASS_03:
+		if (record->event.pressed) {
+			SEND_STRING(" ");
 		}
 		else {
 
@@ -238,7 +278,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * ------------------------------------
     */
     [0] = LAYOUT(
-        PRNT_01,  PRNT_03, PRNT_04, KC_NLCK, KC_PSLS, KC_BSPC, MO(1),
+        PRNT_01,  PRNT_03, PRNT_04, CD_F,    CD_IMG, KC_BSPC, MO(1),
         PRNT_02,  KC_END,  KC_PGDN, CMD_07,  CMD_08,  CMD_09,  KC_TAB,
                                     CMD_04,  CMD_05,  CMD_06,
                  KC_UP,             CMD_01,  CMD_02,  CMD_03,  KC_PENT,
@@ -246,7 +286,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [1] = LAYOUT(
-        _______,  _______, _______,  _______, _______, PASS_01, _______,
+        _______,  _______, _______,  PASS_03, PASS_02, PASS_01, _______,
         _______,  _______, _______,  _______, _______, _______, _______,
                                      _______, _______, _______,
                   _______,           CMD_11,  CMD_12,  CMD_13,  _______,
